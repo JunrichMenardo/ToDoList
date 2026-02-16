@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Atlas | Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="sidebar__brand">Todo Atlas</div>
+        <nav class="sidebar__nav" aria-label="Primary">
+          <a class="sidebar__link" href="index.html">Dashboard</a>
+          <a class="sidebar__link" href="tasks.html">Tasks</a>
+          <a class="sidebar__link" href="calendar.html">Calendar</a>
+          <a class="sidebar__link sidebar__link--active" href="settings.html">Settings</a>
+        </nav>
+        <div class="sidebar__footer">Plan. Ship. Repeat.</div>
+      </aside>
+
+      <main class="page">
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Settings</p>
+            <h1 class="panel__title">Workspace</h1>
+            <p class="panel__subtitle">Dial in how you want the list to feel.</p>
+          </header>
+          <form class="settings-form" id="settingsForm">
+            <div class="settings-row">
+              <div class="settings-info">
+                <h2 class="settings-info__title">Daily reminder</h2>
+                <p class="settings-info__text">Toggle a daily nudge to review your plan.</p>
+              </div>
+              <label class="toggle">
+                <input id="dailyReminder" type="checkbox" />
+                <span class="toggle__track"></span>
+              </label>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-info">
+                <h2 class="settings-info__title">Reminder time</h2>
+                <p class="settings-info__text">Pick the time for your daily reminder.</p>
+              </div>
+              <input class="settings-input" id="reminderTime" type="time" />
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-info">
+                <h2 class="settings-info__title">Task limit</h2>
+                <p class="settings-info__text">Limit how many active tasks you can hold.</p>
+              </div>
+              <select class="settings-input" id="taskLimit">
+                <option value="3">3 active</option>
+                <option value="5">5 active</option>
+                <option value="7">7 active</option>
+                <option value="10">10 active</option>
+              </select>
+            </div>
+
+            <div class="settings-row">
+              <div class="settings-info">
+                <h2 class="settings-info__title">Theme</h2>
+                <p class="settings-info__text">Switch the vibe of the workspace.</p>
+              </div>
+              <select class="settings-input" id="themeSelect">
+                <option value="atlas">Atlas Blue</option>
+                <option value="sunrise">Sunrise</option>
+                <option value="mint">Mint</option>
+              </select>
+            </div>
+
+            <div class="settings-actions">
+              <button class="todo-form__button" type="submit">Save settings</button>
+              <span class="settings-status" id="settingsStatus" role="status">Settings saved</span>
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script src="settings-core.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

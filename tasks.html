@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Atlas | Tasks</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="sidebar__brand">Todo Atlas</div>
+        <nav class="sidebar__nav" aria-label="Primary">
+          <a class="sidebar__link" href="index.html">Dashboard</a>
+          <a class="sidebar__link sidebar__link--active" href="tasks.html">Tasks</a>
+          <a class="sidebar__link" href="calendar.html">Calendar</a>
+          <a class="sidebar__link" href="settings.html">Settings</a>
+        </nav>
+        <div class="sidebar__footer">Plan. Ship. Repeat.</div>
+      </aside>
+
+      <main class="page">
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Core List</p>
+            <h1 class="panel__title">Tasks</h1>
+            <p class="panel__subtitle">Add, complete, and clear tasks with a single flow.</p>
+          </header>
+
+          <form class="todo-form" id="todoForm">
+            <label class="todo-form__label" for="todoInput">New task</label>
+            <div class="todo-form__row">
+              <input
+                class="todo-form__input"
+                id="todoInput"
+                name="todoInput"
+                type="text"
+                placeholder="Add a task like: Finish HTML section"
+                autocomplete="off"
+                required
+                maxlength="120"
+              />
+              <button class="todo-form__button" type="submit">Add</button>
+            </div>
+          </form>
+
+          <div class="toolbar">
+            <div class="toolbar__count" id="todoCount">0 tasks</div>
+            <div class="toolbar__actions">
+              <button class="chip chip--active" data-filter="all" type="button">All</button>
+              <button class="chip" data-filter="active" type="button">Active</button>
+              <button class="chip" data-filter="done" type="button">Done</button>
+              <button class="chip chip--ghost" id="clearDone" type="button">Clear done</button>
+            </div>
+          </div>
+
+          <ul class="todo-list" id="todoList" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+
+    <template id="todoItemTemplate">
+      <li class="todo-item" data-status="active">
+        <label class="todo-item__check">
+          <input class="todo-item__checkbox" type="checkbox" />
+          <span class="todo-item__icon"></span>
+        </label>
+        <span class="todo-item__text"></span>
+        <button class="todo-item__delete" type="button" aria-label="Delete task">Delete</button>
+      </li>
+    </template>
+
+    <script src="settings-core.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

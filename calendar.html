@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Atlas | Calendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="sidebar__brand">Todo Atlas</div>
+        <nav class="sidebar__nav" aria-label="Primary">
+          <a class="sidebar__link" href="index.html">Dashboard</a>
+          <a class="sidebar__link" href="tasks.html">Tasks</a>
+          <a class="sidebar__link sidebar__link--active" href="calendar.html">Calendar</a>
+          <a class="sidebar__link" href="settings.html">Settings</a>
+        </nav>
+        <div class="sidebar__footer">Plan. Ship. Repeat.</div>
+      </aside>
+
+      <main class="page">
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Weekly Focus</p>
+            <h1 class="panel__title">Weekly Goals</h1>
+            <p class="panel__subtitle">Plan the week with clear outcomes and milestones.</p>
+          </header>
+          <div class="cards">
+            <div class="notes__card">
+              <h2>Primary Goal</h2>
+              <p>Choose the one outcome that matters most this week.</p>
+            </div>
+            <div class="notes__card">
+              <h2>Supporting Wins</h2>
+              <p>List two smaller wins that unlock the primary goal.</p>
+            </div>
+            <div class="notes__card notes__card--accent">
+              <h2>Weekly Review</h2>
+              <p>Schedule a quick review to celebrate progress and reset.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Alerts</p>
+            <h2 class="panel__title">Set Reminder</h2>
+            <p class="panel__subtitle">Save a reminder with a date and time.</p>
+          </header>
+          <form class="reminder-form" id="reminderForm">
+            <div class="reminder-form__field">
+              <label class="reminder-form__label" for="reminderText">Reminder</label>
+              <input
+                class="reminder-form__input"
+                id="reminderText"
+                type="text"
+                placeholder="Example: Submit weekly report"
+                required
+                maxlength="120"
+              />
+            </div>
+            <div class="reminder-form__row">
+              <div class="reminder-form__field">
+                <label class="reminder-form__label" for="reminderDate">Date</label>
+                <input class="reminder-form__input" id="reminderDate" type="date" required />
+              </div>
+              <div class="reminder-form__field">
+                <label class="reminder-form__label" for="reminderTime">Time</label>
+                <input class="reminder-form__input" id="reminderTime" type="time" required />
+              </div>
+              <button class="todo-form__button" type="submit">Save</button>
+            </div>
+          </form>
+          <ul class="mini-list" id="reminderList" aria-live="polite"></ul>
+        </section>
+
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Plan</p>
+            <h2 class="panel__title">Weekly Goals List</h2>
+            <p class="panel__subtitle">Add the goals you want to finish this week.</p>
+          </header>
+          <form class="reminder-form" id="goalForm">
+            <div class="reminder-form__row">
+              <div class="reminder-form__field">
+                <label class="reminder-form__label" for="goalInput">Goal</label>
+                <input
+                  class="reminder-form__input"
+                  id="goalInput"
+                  type="text"
+                  placeholder="Example: Finish project draft"
+                  required
+                  maxlength="120"
+                />
+              </div>
+              <button class="todo-form__button" type="submit">Add</button>
+            </div>
+          </form>
+          <ul class="mini-list" id="goalList" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="settings-core.js"></script>
+    <script src="calendar.js"></script>
+  </body>
+</html>

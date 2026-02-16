@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo Atlas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="sidebar__brand">Todo Atlas</div>
+        <nav class="sidebar__nav" aria-label="Primary">
+          <a class="sidebar__link sidebar__link--active" href="index.html">Dashboard</a>
+          <a class="sidebar__link" href="tasks.html">Tasks</a>
+          <a class="sidebar__link" href="calendar.html">Calendar</a>
+          <a class="sidebar__link" href="settings.html">Settings</a>
+        </nav>
+        <div class="sidebar__footer">Plan. Ship. Repeat.</div>
+      </aside>
+
+      <main class="page">
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Just Do It</p>
+            <h1 class="panel__title">Dashboard</h1>
+            <p class="panel__subtitle">Track what is done, what remains, and your progress.</p>
+          </header>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <p class="stat-card__label">Completed</p>
+              <p class="stat-card__value" id="completedCount">0</p>
+              <p class="stat-card__hint">Tasks finished</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-card__label">Not Completed</p>
+              <p class="stat-card__value" id="remainingCount">0</p>
+              <p class="stat-card__hint">Tasks left</p>
+            </div>
+            <div class="stat-card stat-card--accent">
+              <p class="stat-card__label">Progress</p>
+              <p class="stat-card__value" id="progressPercent">0%</p>
+              <div class="progress">
+                <div class="progress__bar" id="progressBar"></div>
+              </div>
+              <p class="stat-card__hint"><span id="totalCount">0</span> total tasks</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Notifications</p>
+            <h2 class="panel__title">Reminders</h2>
+            <p class="panel__subtitle">Upcoming reminders from your calendar.</p>
+          </header>
+          <ul class="mini-list" id="dashboardReminderList" aria-live="polite"></ul>
+        </section>
+
+        <section class="panel">
+          <header class="panel__header">
+            <p class="panel__eyebrow">Weekly Plan</p>
+            <h2 class="panel__title">Weekly Goals</h2>
+            <p class="panel__subtitle">Goals pulled from your weekly goals list.</p>
+          </header>
+          <ul class="mini-list" id="dashboardGoalList" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+    <script src="settings-core.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
